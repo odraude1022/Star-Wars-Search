@@ -1,15 +1,26 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+
+import HomeScreen from './HomeScreen'
+import DetailsScreen from './DetailsScreen'
+
+const RootStack = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Details: DetailsScreen,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+const AppContainer = createAppContainer(RootStack);
 
 export default function App() {
   return (
-    // <ImageBackground source={require('./background.png')} style={{height: '100%', width: '100%'}}>
-    <ImageBackground source={require('./background.png')} style={{width: '100%', height: '100%'}}>
-      <View style={styles.container}>
-        <Image source={require('./logo.png')} style={{height: 100, width: 200}}/>
-        <Text style={{color: 'white'}}>Open up App.js to start working on your app!</Text>
-      </View>
-    </ImageBackground>
+    <AppContainer/>
   );
 }
 
