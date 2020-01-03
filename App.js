@@ -6,6 +6,7 @@ export default function App() {
     // <ImageBackground source={require('./background.png')} style={{height: '100%', width: '100%'}}>
     <ImageBackground source={require('./background.png')} style={{width: '100%', height: '100%'}}>
       <View style={styles.container}>
+        <Image source={require('./logo.png')} style={{height: 100, width: 200}}/>
         <Text style={{color: 'white'}}>Open up App.js to start working on your app!</Text>
       </View>
     </ImageBackground>
