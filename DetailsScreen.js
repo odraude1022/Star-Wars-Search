@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, Button } from 'react-native';
 
 class DetailsScreen extends React.Component {
   render() {
@@ -8,6 +8,10 @@ class DetailsScreen extends React.Component {
         <View style={styles.container}>
           <Image source={require('./logo.png')} style={{height: 100, width: 200}}/>
           <Text style={{color: 'white'}}>Details</Text>
+          <Button
+            title="Go to Home"
+            onPress={() => this.props.navigation.push('Home')}  
+          />
         </View>
       </ImageBackground>
     );
