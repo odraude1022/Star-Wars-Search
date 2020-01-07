@@ -2,6 +2,9 @@ import React from 'react'
 import { StyleSheet, Text, View, ImageBackground, Image, Button } from 'react-native';
 
 class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Home'
+  }
   render() {
     const {navigation} = this.props
     return (
@@ -27,7 +30,7 @@ class HomeScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 70,
+    marginTop: 90,
     // backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',

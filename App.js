@@ -12,6 +12,13 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'Home',
+    defaultNavigationOptions: {
+      headerTransparent: true,
+      headerTintColor: "white",
+      headerTitleStyle: {
+      fontWeight: 'bold',
+      }
+    }
   }
 );
 
