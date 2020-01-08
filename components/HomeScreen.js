@@ -16,8 +16,8 @@ class HomeScreen extends React.Component {
           <Text style={{color: 'white'}}>id: {navigation.getParam('id')}</Text>
           <Text style={{color: 'white'}}>somethingElse: {navigation.getParam('somethingElse')}</Text>
           <Button
-            title="Go to Details"
-            onPress={() => navigation.navigate('Details', {
+            title="Go to People Search"
+            onPress={() => navigation.navigate('People', {
               id: 45,
               somethingElse: "hello"
             })}  
