@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, ImageBackground, Image, Button, TextInput, ScrollView, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, Button, TextInput, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import axios from 'axios'
 
 import styles from '../styles'
@@ -60,7 +60,12 @@ class PeopleScreen extends React.Component {
                 suggestions.map((person, index) => {
                   return(
                     <View key={index}>
-                      <Text style={{color: 'white'}}>{person.name}</Text>
+                      <Text 
+                        style={{color: 'white'}} 
+                        onPress={() => navigation.navigate('Person', {person})}
+                      >
+                       {person.name}
+                      </Text>
                     </View>
                   )
                 })
