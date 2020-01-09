@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, ImageBackground, Image, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, Button, TextInput, ScrollView, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import axios from 'axios'
 
 import styles from '../styles'
@@ -45,26 +45,30 @@ class PeopleScreen extends React.Component {
     const {suggestions} = this.state
     return(
       <ImageBackground source={require('../assets/background.png')} style={{width: '100%', height: '100%'}}>
-        <View style={styles.container}>
-        <Image source={require('../assets/logo.png')} style={{height: 100, width: 200}}/>
-        <Text h2 style={{color: 'white'}}>People</Text>
-        <TextInput
-          value={this.state.query}
-          onChangeText={text => this.handleChangeText(text)}
-          style={{backgroundColor: 'white', width: 200, borderRadius: 10}}
-        />
-        <View>
-          {
-            suggestions.map((person, index) => {
-              return(
-                <View key={index}>
-                  <Text style={{color: 'white'}}>{person.name}</Text>
-                </View>
-              )
-            })
-          }
-        </View>
-        </View>
+        <ScrollView>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.container}>
+            <Image source={require('../assets/logo.png')} style={{height: 100, width: 200}}/>
+            <Text h2 style={{color: 'white'}}>People</Text>
+            <TextInput
+              value={this.state.query}
+              onChangeText={text => this.handleChangeText(text)}
+              style={{backgroundColor: 'white', width: 200, borderRadius: 10, margin: 30}}
+            />
+            <View keyboardShouldPersistTaps="never">
+              {
+                suggestions.map((person, index) => {
+                  return(
+                    <View key={index}>
+                      <Text style={{color: 'white'}}>{person.name}</Text>
+                    </View>
+                  )
+                })
+              }
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+        </ScrollView>
       </ImageBackground>
     )
   }
