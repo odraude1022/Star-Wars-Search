@@ -1,6 +1,7 @@
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import * as Font from 'expo-font';
 
 import HomeScreen from './components/HomeScreen'
 import DetailsScreen from './components/DetailsScreen'
@@ -32,8 +33,18 @@ const RootStack = createStackNavigator(
 
 const AppContainer = createAppContainer(RootStack);
 
-export default function App() {
-  return (
-    <AppContainer/>
-  );
+export default class App extends React.Component {
+  
+  componentDidMount() {
+    Font.loadAsync({
+      'star-wars': require('./assets/fonts/Starjedi.ttf'),
+    });
+  }
+
+
+  render() {
+    return (
+      <AppContainer/>
+    );
+  }
 }
