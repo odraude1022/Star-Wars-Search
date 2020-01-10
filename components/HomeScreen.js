@@ -9,18 +9,15 @@ class HomeScreen extends React.Component {
   render() {
     const {navigation} = this.props
     return (
-      <ImageBackground source={require('../assets/background.png')} style={{width: '100%', height: '100%'}}>
+      <ImageBackground source={require('../assets/background.png')} style={styles.background}>
         <View style={styles.container}>
-          <Image source={require('../assets/logo.png')} style={{height: 100, width: 200}}/>
-          <Text style={{color: 'white'}}>Home</Text>
-          <Text style={{color: 'white'}}>id: {navigation.getParam('id')}</Text>
-          <Text style={{color: 'white'}}>somethingElse: {navigation.getParam('somethingElse')}</Text>
+          <Image source={require('../assets/logo.png')} style={styles.logo}/>
+          <Text style={styles.info}>Home</Text>
+          <Text style={styles.info}>id: {navigation.getParam('id')}</Text>
+          <Text style={styles.info}>somethingElse: {navigation.getParam('somethingElse')}</Text>
           <Button
             title="Go to People Search"
-            onPress={() => navigation.navigate('People', {
-              id: 45,
-              somethingElse: "hello"
-            })}  
+            onPress={() => navigation.navigate('People')}  
           />
         </View>
       </ImageBackground>

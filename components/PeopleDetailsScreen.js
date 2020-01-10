@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, ImageBackground, Image, Button, TextInput, ScrollView, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { Text, View, ImageBackground, Image} from 'react-native';
 import axios from 'axios'
 
 import styles from '../styles'
@@ -28,18 +28,18 @@ class PeopleDetailsScreen extends React.Component {
     const {navigation} = this.props
     const person = navigation.getParam('person')
     return(
-      <ImageBackground source={require('../assets/background.png')} style={{width: '100%', height: '100%'}}>
+      <ImageBackground source={require('../assets/background.png')} style={styles.background}>
         <View style={styles.container}>
-        <Image source={require('../assets/logo.png')} style={{height: 100, width: 200}}/>
-          <Text style={{color: 'yellow', fontSize: 25}}>{person.name}</Text>
-          <Text style={{color: 'yellow'}}>Born: {person.birth_year}</Text>
-          <Text style={{color: 'yellow'}}>Homeworld: {this.state.homeworld}</Text>
-          <Text style={{color: 'yellow'}}>Species: {this.state.species}</Text>
-          <Text style={{color: 'yellow'}}>Gender: {person.gender}</Text>
-          <Text style={{color: 'yellow'}}>Height: {person.height} cm</Text>
-          <Text style={{color: 'yellow'}}>Mass: {person.mass} kg</Text>
-          <Text style={{color: 'yellow'}}>Hair Color: {person.hair_color}</Text>
-          <Text style={{color: 'yellow'}}>Eye Color: {person.eye_color}</Text>
+        <Image source={require('../assets/logo.png')} style={styles.logo}/>
+          <Text style={styles.heading}>{person.name}</Text>
+          <Text style={styles.info}>Born: {person.birth_year}</Text>
+          <Text style={styles.info}>Homeworld: {this.state.homeworld}</Text>
+          <Text style={styles.info}>Species: {this.state.species}</Text>
+          <Text style={styles.info}>Gender: {person.gender}</Text>
+          <Text style={styles.info}>Height: {person.height} cm</Text>
+          <Text style={styles.info}>Mass: {person.mass} kg</Text>
+          <Text style={styles.info}>Hair Color: {person.hair_color}</Text>
+          <Text style={styles.info}>Eye Color: {person.eye_color}</Text>
         </View>
       </ImageBackground>
     )

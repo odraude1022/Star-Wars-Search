@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, ImageBackground, Image, Button, TextInput, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import { Text, View, ImageBackground, Image, TextInput, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import axios from 'axios'
 
 import styles from '../styles'
@@ -44,16 +44,16 @@ class PeopleScreen extends React.Component {
     const {navigation} = this.props
     const {suggestions} = this.state
     return(
-      <ImageBackground source={require('../assets/background.png')} style={{width: '100%', height: '100%'}}>
+      <ImageBackground source={require('../assets/background.png')} style={styles.background}>
         <ScrollView>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.container}>
-            <Image source={require('../assets/logo.png')} style={{height: 100, width: 200}}/>
-            <Text h2 style={{color: 'white'}}>People</Text>
+            <Image source={require('../assets/logo.png')} style={styles.logo}/>
+            <Text style={styles.heading}>People</Text>
             <TextInput
               value={this.state.query}
               onChangeText={text => this.handleChangeText(text)}
-              style={{backgroundColor: 'white', width: 200, borderRadius: 10, margin: 30}}
+              style={styles.input}
             />
             <View keyboardShouldPersistTaps="never">
               {
@@ -61,7 +61,7 @@ class PeopleScreen extends React.Component {
                   return(
                     <View key={index}>
                       <Text 
-                        style={{color: 'white'}} 
+                        style={styles.info} 
                         onPress={() => navigation.navigate('Person', {person})}
                       >
                        {person.name}
