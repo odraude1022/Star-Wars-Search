@@ -8,6 +8,7 @@ import DetailsScreen from './components/DetailsScreen'
 import PeopleScreen from './components/PeopleScreen'
 import PeopleDetailsScreen from './components/PeopleDetailsScreen'
 import PlanetsScreen from './components/PlanetsScreen'
+import PlanetsDetailsScreen from './components/PlanetsDetailsScreen'
 import SpeciesScreen from './components/SpeciesScreen'
 
 const RootStack = createStackNavigator(
@@ -17,6 +18,7 @@ const RootStack = createStackNavigator(
     People: PeopleScreen,
     Person: PeopleDetailsScreen,
     Planets: PlanetsScreen,
+    Planet: PlanetsDetailsScreen,
     Species: SpeciesScreen,
   },
   {
@@ -34,15 +36,20 @@ const RootStack = createStackNavigator(
 const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component {
+  state = {fontLoaded: false}
   
-  componentDidMount() {
-    Font.loadAsync({
+  async componentDidMount() {
+    await Font.loadAsync({
       'star-wars': require('./assets/fonts/Starjedi.ttf'),
     });
+    this.setState({fontLoaded: true})
   }
 
 
   render() {
+    if(!this.state.fontLoaded) {
+      return null
+    }
     return (
       <AppContainer/>
     );

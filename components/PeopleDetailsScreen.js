@@ -20,10 +20,6 @@ class PeopleDetailsScreen extends React.Component {
     axios.get(person.species[0]).then(res => this.setState({species: res.data.name}))
   }
 
-  getHomeworld = async () => {
-    
-  }
-
   render() {
     const {navigation} = this.props
     const person = navigation.getParam('person')
