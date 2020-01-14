@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, ScrollView, TouchableWithoutFeedback, ImageBackground, Image, Keyboard } from 'react-native'
+import { Text, TextInput, View, ScrollView, TouchableWithoutFeedback, ImageBackground, Image, Keyboard } from 'react-native'
 import axios from 'axios'
 import styles from '../styles'
 
@@ -7,8 +7,8 @@ class PlanetsScreen extends React.Component {
 
   state = {query: "", planets: [], suggestions: []}
 
-  async componentDidMount() {
-    await this.fetchPlanets('https://swapi.co/api/planets/')
+  componentDidMount() {
+    this.fetchPlanets('https://swapi.co/api/planets/')
   }
 
   fetchPlanets = async (url) => {

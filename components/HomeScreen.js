@@ -23,6 +23,10 @@ class HomeScreen extends React.Component {
             title="Go to Planets Search"
             onPress={() => navigation.navigate('Planets')}  
           />
+          <Button
+            title="Go to Species Search"
+            onPress={() => navigation.navigate('Species')}  
+          />
         </View>
       </ImageBackground>
     );
