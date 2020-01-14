@@ -62,7 +62,8 @@ class SpeciesScreen extends React.Component {
                     return(
                       <View key={index}>
                         <Text 
-                          style={styles.info} 
+                          style={styles.info}
+                          onPress={() => navigation.navigate('SpeciesDetails', {species: suggestion})}
                         >
                          {suggestion.name}
                         </Text>

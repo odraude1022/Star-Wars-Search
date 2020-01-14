@@ -4,22 +4,22 @@ import { createStackNavigator } from 'react-navigation-stack';
 import * as Font from 'expo-font';
 
 import HomeScreen from './components/HomeScreen'
-import DetailsScreen from './components/DetailsScreen'
 import PeopleScreen from './components/PeopleScreen'
 import PeopleDetailsScreen from './components/PeopleDetailsScreen'
 import PlanetsScreen from './components/PlanetsScreen'
 import PlanetsDetailsScreen from './components/PlanetsDetailsScreen'
 import SpeciesScreen from './components/SpeciesScreen'
+import SpeciesDetailsScreen from './components/SpeciesDetailsScreen'
 
 const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
-    Details: DetailsScreen,
     People: PeopleScreen,
     Person: PeopleDetailsScreen,
     Planets: PlanetsScreen,
     Planet: PlanetsDetailsScreen,
     Species: SpeciesScreen,
+    SpeciesDetails: SpeciesDetailsScreen,
   },
   {
     initialRouteName: 'Home',
