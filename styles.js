@@ -32,6 +32,15 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     margin: 30,
     fontFamily: 'star-wars'
+  },
+  buttonView: {
+    borderRadius: 10,
+    backgroundColor: 'yellow',
+    padding: 10,
+    marginTop: 10
+  },
+  button: {
+    fontFamily: 'star-wars',
   }
 });
 

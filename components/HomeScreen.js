@@ -13,18 +13,21 @@ class HomeScreen extends React.Component {
         <View style={styles.container}>
           <Image source={require('../assets/logo.png')} style={styles.logo}/>
           <Text style={styles.heading}>Home</Text>
-          <Button
-            title="Go to People Search"
-            onPress={() => navigation.navigate('People')}  
-          />
-          <Button
-            title="Go to Planets Search"
-            onPress={() => navigation.navigate('Planets')}  
-          />
-          <Button
-            title="Go to Species Search"
-            onPress={() => navigation.navigate('Species')}  
-          />
+          <View style={styles.buttonView}>
+            <Text style={styles.button} onPress={() => navigation.navigate('People')}>
+              Go to People Search
+            </Text>
+          </View>
+          <View style={styles.buttonView}>
+            <Text style={styles.button} onPress={() => navigation.navigate('Planets')}  >
+              Go to Planets Search
+            </Text>
+          </View>
+          <View style={styles.buttonView}>
+            <Text style={styles.button} onPress={() => navigation.navigate('Species')}>
+              Go to Species Search
+            </Text>
+          </View>
         </View>
       </ImageBackground>
     );
