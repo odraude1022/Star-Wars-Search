@@ -21,6 +21,7 @@ class PlanetsDetailsScreen extends React.Component {
   render() {
     const {navigation} = this.props
     const planet = navigation.getParam('planet')
+    console.log(planet)
     return(
       <ImageBackground source={require('../assets/background.png')} style={styles.background}>
         <View style={styles.container}>
@@ -31,7 +32,7 @@ class PlanetsDetailsScreen extends React.Component {
           <Text style={styles.info}>Diameter: {planet.diameter} km</Text>
           <Text style={styles.info}>Climate: {planet.climate}</Text>
           <Text style={styles.info}>Gravity: {planet.gravity}</Text>
-          <Text style={styles.info}>Surface Water: {planet.surface_water} Percent</Text>
+          <Text style={styles.info}>Surface Water: {planet.surface_water === "unknown" ? planet.surface_water : `${planet.surface_water} Percent`}</Text>
           <Text style={styles.info}>Population: {planet.population}</Text>
         </View>
       </ImageBackground>
